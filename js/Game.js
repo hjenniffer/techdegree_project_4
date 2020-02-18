@@ -8,21 +8,32 @@ scoreboard.
  */
 
 class Game {
-    constructor(missed,phrases,activePhrase){
+    constructor(){
 
         this.missed = 0;
-        this.phrases = 
-        [
-                'Jaws of Life',
-                'Raining Cats and Dogs',
-                'Fight Fire with Fire',
-                'Down to Earth',
-                'Down and Out'
-
-            ];
+        this.phrases = this.createPhrases();
      this.activePhrase = null;
         
     }
     
     
+
+
+    /**
+* Creates phrases for use in game
+* @return {array} An array of phrases that could be used in the game
+*/
+
+createPhrases(){
+
+  const gamePhrases =[ 
+    "Jaws of Life",
+    "Raining Cats and Dogs",
+    "Fight Fire with Fire",
+    "Down to Earth",
+    "Down and Out"];
+
+    return gamePhrases;
+
     }
+}
