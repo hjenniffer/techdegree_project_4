@@ -161,6 +161,7 @@ handleInteraction(e) {
                     if (button.className != "wrong") {
                         //if the button class is not already wrong
                         button.className = "wrong"; //set it to wrong
+                        body.style.backgroundColor="green"
                         this.removeLife(); //remove life
                     }
                 }

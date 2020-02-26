@@ -19,6 +19,7 @@ class Phrase {
     /**
 * Display phrase on game board
 */
+
 addPhraseToDisplay() {
 
 const currentPhrase = this.phrase.split('');
