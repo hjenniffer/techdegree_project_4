@@ -14,6 +14,8 @@ const startGameButton = document.getElementById('btn__reset');
 const screenKeyboard = document.getElementById('qwerty');
 
 
+
+
 //add event Listner
 
 let game;
@@ -22,12 +24,39 @@ let game;
 
 startGameButton.addEventListener('click',() => {
     game = new Game();
+    game.resetGame();
     game.startGame();
 
    
 
 });
 
+/**
+* Handles onscreen keyboard button clicks
+* @param (HTMLButtonElement) button - The clicked button element
+*/
+
+//Click listener for onScreen qwerty keyboard
+screenKeyboard.addEventListener("click", e => {
+    if (e.target.className == "key") {
+        //only if the clicked target has key class name
+        game.handleInteraction(e);
+    }
+});
+
+//Keyboard keydown listener set on the document so it can be captured anywhere on the document
+document.addEventListener("keydown", e => {
+    //calling Intraction method on game object and passing the event to handler
+    game.handleInteraction(e);
+});
+
+//document.addEventListener('keydown', (event)=>{
+    //''if (event.keyCode)
+
+
+
+
+//});
 
 
 
